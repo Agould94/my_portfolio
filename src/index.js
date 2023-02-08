@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
-import {useRef, useState} from 'react'
-
-import {Canvas, useFrame} from '@react-three/fiber'
+import AppAlt from './AppAlt';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <App />
+    <BrowserRouter>
+      <AppAlt />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
