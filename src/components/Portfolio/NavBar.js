@@ -19,7 +19,7 @@ import { ClassNames } from '@emotion/react';
 function NavBar() {
 
   return (
-    <AppBar position = "static" sx={{background: "#c3e0ce"}}>
+    <AppBar position = "static" sx={{background: "#404040"}}>
         <CssBaseline/>
         <Toolbar>
             <Typography variant = "h5" component={Link} to = "/" sx={{textDecoration: "none", color: "black", marginLeft: "-20px", marginRight: "10px"}}>
