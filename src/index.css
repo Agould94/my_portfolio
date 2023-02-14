@@ -23,4 +23,110 @@ canvas{
 
 #root{
   height: 100%;
+  
+}
+
+.app{
+  background-color: #555555;
+}
+
+.circle{
+  width: 400px;
+  height: 400px;
+  /* background: rgba(0, 0, 0, 0.2); */
+  display: inline-flex;
+  border-radius: 50%;
+  position:relative;
+}
+
+.innerCircle{
+  width: 200px;
+  height: 200px;
+  background:rgb(115, 115, 115);
+  border-radius: 50%;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin: -100px 0px 0px -100px;
+}
+
+.innerCircleText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:inherit;
+  top:50%;
+  left:50%;
+}
+
+.menu{
+  --d:150px;
+  --i:30deg;
+  list-style-type: none;
+  padding: 0;
+  display:grid;
+  margin:auto;
+}
+
+.menu li{
+  grid-area:1/1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transform: rotate(var(--r)) translateX(var(--d)) rotate(calc(-1*var(--r)));
+}
+
+.menu li:hover{
+  height:75px;
+  width:75px;
+  transform: rotate(var(--r)) translateX(calc(20px + var(--d))) rotate(calc(-1*var(--r)));
+}
+
+.menu li:nth-child(1) { --r: calc( 0*var(--i))} 
+.menu li:nth-child(2) { --r: calc( 1*var(--i))} 
+.menu li:nth-child(3) { --r: calc( 2*var(--i))} 
+.menu li:nth-child(4) { --r: calc( 3*var(--i))} 
+.menu li:nth-child(5) { --r: calc( 4*var(--i))} 
+.menu li:nth-child(6) { --r: calc( 5*var(--i))} 
+.menu li:nth-child(7) { --r: calc( 6*var(--i))} 
+.menu li:nth-child(8) { --r: calc( 7*var(--i))} 
+.menu li:nth-child(9) { --r: calc( 8*var(--i))} 
+.menu li:nth-child(10){ --r: calc( 9*var(--i))} 
+.menu li:nth-child(11){ --r: calc( 10*var(--i))} 
+.menu li:nth-child(12){ --r: calc( 11*var(--i))} 
+
+.menu li img{
+  display: block;
+  width:50px;
+}
+
+.right-gradient{
+  position:absolute;
+  z-index: 1;
+
+  top:0;
+  left:0;
+
+  height:100%;
+  width:100%;
+
+  background-image: linear-gradient(to right,
+  rgba(255, 255, 255, 0), 95%,
+  #555555 99%);
+
+}
+
+.left-gradient{
+  position:absolute;
+  z-index:1;
+  
+  top:0;
+  left:0;
+
+  height:100%;
+  width:100%;
+
+  background-image: linear-gradient(to left,
+  rgba(255, 255, 255, 0), 95%,
+  #555555 99%);
 }
