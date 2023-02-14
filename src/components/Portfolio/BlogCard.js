@@ -18,7 +18,7 @@ function BlogCard({blog}) {
 
   return (
     <Link href = {link} underline = "none">
-    <Card sx = {{maxWidth: 345, height: 369}}>
+    <Card sx = {{maxWidth: 345, height: 369, marginLeft:1, marginRight:1}}>
         <CardMedia
         sx={{height: 175}}
         image = {thumbnail}>
