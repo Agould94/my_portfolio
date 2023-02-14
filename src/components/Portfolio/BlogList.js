@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import BlogCard from "./BlogCard"
 import Carousel from 'react-multi-carousel'
 import "react-multi-carousel/lib/styles.css"
+import { Box } from '@mui/system'
 
 
 function BlogList() {
@@ -15,10 +16,7 @@ function BlogList() {
     .then((r)=>r.json())
     .then((d)=> {
         setBlogs(d) 
-    })
-
-   }, []
-   )
+    })}, [])
    
    const responsive = {
     desktop: {
@@ -34,7 +32,13 @@ function BlogList() {
 
 
   return (
-    <Carousel responsive={responsive} autoPlaySpeed={1000} infinite={true} swipeable={true} centerMode={true} >{blogsToDisplay}</Carousel>
+    <Box sx = {{marginTop:5, marginBottom:5, position:"relative"}}>
+        <Carousel responsive={responsive} autoPlaySpeed={1000} infinite={true} swipeable={true} centerMode={true}>
+          {blogsToDisplay}
+        </Carousel>
+        <div className="right-gradient"/>
+        <div className="left-gradient"/>
+    </Box>
   )
 }
 
