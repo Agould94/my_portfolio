@@ -16,10 +16,10 @@ import { ClassNames } from '@emotion/react';
 
 
 
-function NavBar() {
+function NavBar({handleAnchorClick}) {
 
   return (
-    <AppBar position = "static" sx={{background: "#404040"}}>
+    <AppBar position = "sticky" sx={{background: "#404040"}}>
         <CssBaseline/>
         <Toolbar>
             <Typography variant = "h5" component={Link} to = "/" sx={{textDecoration: "none", color: "black", marginLeft: "-20px", marginRight: "10px"}}>
@@ -34,7 +34,7 @@ function NavBar() {
                 </Button>
             </Box>
                 <Box>
-                 <Button sx = {{color: 'black', marginTop: '5px'}} variant = "text" component= {Link} to = "/contact" >
+                 <Button sx = {{color: 'black', marginTop: '5px'}} variant = "text" onClick = {handleAnchorClick} >
                     Contact
                 </Button>
                 </Box>

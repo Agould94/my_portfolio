@@ -7,14 +7,25 @@ import NavBar from './components/Portfolio/NavBar'
 
 function AppAlt(){
   useEffect(()=>{console.log("hi")})
- 
+  const [anchorEl, setAnchorEl]=useState(null)
+  
+ function handleAnchorClick(e){
+    setAnchorEl(e.currentTarget)
+  }
+
+  function handleAnchorClose(){
+    setAnchorEl(null)
+  }
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'popover' : undefined;
   
   return (
     <div class="app">
-      <NavBar></NavBar>
+      <NavBar handleAnchorClick={handleAnchorClick}></NavBar>
       <Switch>
         <Route exact path ="/">
-          <Main></Main>
+          <Main anchorEl={anchorEl} handleAnchorClose={handleAnchorClose} open={open} id={id}></Main>
         </Route>
         <Route path = "/resume">
 

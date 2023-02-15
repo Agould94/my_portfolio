@@ -130,3 +130,17 @@ canvas{
   rgba(255, 255, 255, 0), 95%,
   #555555 99%);
 }
+
+.contact{
+  background-color: white;
+  height:80vh;
+  width:800px;
+
+}
+
+.contact-form{
+  display:block;
+  justify-content: center;
+  width: 100%;
+}
+
