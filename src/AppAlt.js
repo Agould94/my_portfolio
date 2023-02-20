@@ -4,6 +4,7 @@ import Info from './components/Portfolio/Info'
 import { Route, Switch } from 'react-router-dom'
 import Main from './components/Portfolio/Main'
 import NavBar from './components/Portfolio/NavBar'
+import Resume from './components/Portfolio/Resume'
 
 function AppAlt(){
   useEffect(()=>{console.log("hi")})
@@ -21,14 +22,14 @@ function AppAlt(){
   const id = open ? 'popover' : undefined;
   
   return (
-    <div class="app">
+    <div className="app">
       <NavBar handleAnchorClick={handleAnchorClick}></NavBar>
       <Switch>
         <Route exact path ="/">
           <Main anchorEl={anchorEl} handleAnchorClose={handleAnchorClose} open={open} id={id}></Main>
         </Route>
         <Route path = "/resume">
-
+          <Resume></Resume>
         </Route>
         <Route path = "/projects">
           

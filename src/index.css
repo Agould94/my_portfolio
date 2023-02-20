@@ -28,6 +28,7 @@ canvas{
 
 .app{
   background-color: #555555;
+ 
 }
 
 .circle{
@@ -132,9 +133,10 @@ canvas{
 }
 
 .contact{
-  background-color: white;
+  background-color: rgb(107, 107, 107);
   height:80vh;
   width:800px;
+  border: 9px rgb(63, 63, 63);
 
 }
 
@@ -144,3 +146,6 @@ canvas{
   width: 100%;
 }
 
+.res{
+  height:100vh;
+}

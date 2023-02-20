@@ -292,7 +292,7 @@
   "projects":[
     {
       "name":"Dialogium",
-      "description":"This application allows users to generate courses using openAI's GPT-3 language model. It generates entire courses for learning any subject of a users choice and allows users to share those courses with others.\n The app lets users edit the courses by adding or deleting lessons, adding text to the lessons, and adding videos from youtube to those lessons. Intended for self-starters and Autodidacts, it is a powerful tool to organize and optimize your learning.\n\n Look out for constant updates as I build functionality to generate tests, and build in functionality for users to credentialize their knowledge on the blockchain based upon peer-verified course completion.",
+      "description":"This application allows users to generate and share courses for self-directed learning using openAI's GPT-3 language model and YouTube videos. It generates entire courses for learning any subject of a users choice and allows users to share those courses with others.\n The app lets users edit the courses by adding or deleting lessons, adding text to the lessons, and adding videos from youtube to those lessons. Intended for self-starters and Autodidacts, it is a powerful tool to organize and optimize your learning.\n\n Look out for constant updates as I build functionality to generate tests, and build in functionality for users to credentialize their knowledge on the blockchain based upon peer-verified course completion.",
       "video":"https://youtu.be/AVIeXdjibpA",
       "github":"https://github.com/Agould94/Dialogium",
       "demo":"https://dialogium.onrender.com",
@@ -300,7 +300,7 @@
     },
     {
       "name":"Spotfinder",
-      "description":"This was my first full-stack application. Modled after sites like yelp and instagram, it uses a unique interface to display restaurants. Currently, the application only holds seed data, look out for future updates to features and UI/UX",
+      "description":"This was my first full-stack application. Modeled after sites like yelp and instagram, it uses a unique interface to display restaurants. Currently, the application only holds seed data, look out for future updates to features and UI/UX",
       "video":"https://youtu.be/un1dK-FDgU4",
       "github":"https://github.com/Agould94/spotfinder",
       "demo":"https://spotfinder.onrender.com",

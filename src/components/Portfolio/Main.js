@@ -5,8 +5,9 @@ import Info from './Info'
 import BlogList from './BlogList'
 import Projects from './Projects'
 import Skills from './Skills'
-import { Popover } from '@mui/material'
+import { Popover, Divider } from '@mui/material'
 import Contact from './Contact'
+import Tag from './Tag'
 
 
 
@@ -51,6 +52,8 @@ function Main({id, anchorEl, handleAnchorClose, open}) {
       <Skills skills = {info.skills} technologies={info.technologies}></Skills>
       <Projects></Projects>
       <BlogList></BlogList>
+      <Divider/>
+      <Tag></Tag>
       </div>
       }
     </div>
