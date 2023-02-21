@@ -6,9 +6,12 @@ import Main from './components/Portfolio/Main'
 import NavBar from './components/Portfolio/NavBar'
 import Resume from './components/Portfolio/Resume'
 
+import data from './db.json'
+
 function AppAlt(){
   useEffect(()=>{console.log("hi")})
   const [anchorEl, setAnchorEl]=useState(null)
+  console.log(data)
   
  function handleAnchorClick(e){
     setAnchorEl(e.currentTarget)
@@ -26,7 +29,7 @@ function AppAlt(){
       <NavBar handleAnchorClick={handleAnchorClick}></NavBar>
       <Switch>
         <Route exact path ="/">
-          <Main anchorEl={anchorEl} handleAnchorClose={handleAnchorClose} open={open} id={id}></Main>
+          <Main data={data} anchorEl={anchorEl} handleAnchorClose={handleAnchorClose} open={open} id={id}></Main>
         </Route>
         <Route path = "/resume">
           <Resume></Resume>

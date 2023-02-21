@@ -6,7 +6,7 @@ function Info({info}){
   const {firstName, lastName, email, bio, interests, linkedin, skills, technologies} = info
   return (
     <div>
-      <Box sx ={{display: "flex", marginTop:2}}>
+      <Box sx ={{display: "flex", marginTop:2}} className = "info">
         <Box sx ={{display: "flex", justifyContent: "center", alignItems:"center", marginLeft:8, width:"50%"}}>
           <Avatar src={pic} sx={{height: 250, width:250}}></Avatar>
         </Box>

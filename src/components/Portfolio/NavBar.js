@@ -26,6 +26,9 @@ function NavBar({handleAnchorClick}) {
                 Alexander Gould
             </Typography>
             <Box sx = {{display: "flex", flexGrow: 1}}>
+                <Button sx = {{color: 'black', marginTop: '5px'}} variant = "text" component= {Link} to = "/about" >
+                    About
+                </Button>
                 <Button sx = {{color: 'black', marginTop: '5px'}} variant = "text" component= {Link} to = "/resume" >
                     Resume
                 </Button>

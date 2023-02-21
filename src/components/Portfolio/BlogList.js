@@ -5,18 +5,14 @@ import "react-multi-carousel/lib/styles.css"
 import { Box } from '@mui/system'
 
 
-function BlogList() {
-    const [blogs, setBlogs] = useState([])
-    console.log(blogs)
+function BlogList({blogs}) {
 
-
-
-   useEffect(()=>{
-    fetch(('http://localhost:4000/articles'))
-    .then((r)=>r.json())
-    .then((d)=> {
-        setBlogs(d) 
-    })}, [])
+  //  useEffect(()=>{
+  //   fetch(('http://localhost:4000/articles'))
+  //   .then((r)=>r.json())
+  //   .then((d)=> {
+  //       setBlogs(d) 
+  //   })}, [])
    
    const responsive = {
     desktop: {

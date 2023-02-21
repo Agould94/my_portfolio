@@ -2,24 +2,22 @@ import React,{useState, useEffect} from 'react'
 import { Box, Typography, Avatar, Button, Link } from '@mui/material'
 import { GitHub } from '@mui/icons-material'
 
-function Projects() {
-    const [projects, setProjects]= useState({})
-    const [loading, setLoading] = useState(true)
+function Projects({projects}) {
+    // const [projects, setProjects]= useState(projects)
+    // const [loading, setLoading] = useState(true)
 
-    useEffect(()=>{
-        fetch(('http://localhost:4000/projects'))
-        .then((r)=>r.json())
-        .then((d)=> {
-            setProjects(d) 
-            setLoading(false)
-        })}, []
-       )
+    // useEffect(()=>{
+    //     fetch(('http://localhost:4000/projects'))
+    //     .then((r)=>r.json())
+    //     .then((d)=> {
+    //         setProjects(d) 
+    //         setLoading(false)
+    //     })}, []
+    //    )
 
 
   return (
     <div>
-        {loading ? 
-        null :
         <Box sx = {{backgroundColor:"#888888", paddingBottom:5}}>
             <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: 8, height: 350, alignItems:"center"}}>
                 <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:4}}>
@@ -157,8 +155,6 @@ function Projects() {
                 </Box>
             </Box>
         </Box>
-            
-        }
     </div>
   )
 }

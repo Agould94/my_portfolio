@@ -11,27 +11,23 @@ import Tag from './Tag'
 
 
 
-function Main({id, anchorEl, handleAnchorClose, open}) {
+function Main({id, anchorEl, handleAnchorClose, open, data}) {
 
-  const [info, setInfo] = useState({})
-  const [loading, setLoading]=useState(true)
+  const [info, setInfo] = useState(data.info[0])
+  //const [loading, setLoading]=useState(true)
   console.log(info)
 
-  useEffect(()=>{
-    console.log("effect")
-    fetch("http://localhost:4000/info")
-    .then((r)=>r.json())
-    .then((info)=>{
-      setInfo(info[0]) 
-      setLoading(false)})
-  },[])
+  // useEffect(()=>{
+  //   console.log("effect")
+  //   fetch("http://localhost:4000/info")
+  //   .then((r)=>r.json())
+  //   .then((info)=>{
+  //     setInfo(info[0]) 
+  //     setLoading(false)})
+  // },[])
 
   return (
     <div>
-      {loading 
-      ?
-      null
-      :
       <div>
       <Popover 
       id={id}
@@ -50,12 +46,11 @@ function Main({id, anchorEl, handleAnchorClose, open}) {
       </Popover>
       <Info info = {info}></Info>
       <Skills skills = {info.skills} technologies={info.technologies}></Skills>
-      <Projects></Projects>
-      <BlogList></BlogList>
+      <Projects projects = {data.projects}></Projects>
+      <BlogList blogs = {data.articles}></BlogList>
       <Divider/>
       <Tag></Tag>
       </div>
-      }
     </div>
   )
 }
