@@ -9,7 +9,7 @@ import { Popover, Divider } from '@mui/material'
 import Contact from './Contact'
 import Tag from './Tag'
 import Landing from './Landing'
-
+import { Typography } from '@mui/material'
 
 
 function Main({id, anchorEl, handleAnchorClose, open, data}) {
@@ -47,6 +47,7 @@ function Main({id, anchorEl, handleAnchorClose, open, data}) {
       </Popover>
       <Landing></Landing>
       <Info info = {info}></Info>
+      
       <Skills skills = {info.skills} technologies={info.technologies}></Skills>
       <Projects projects = {data.projects}></Projects>
       <BlogList blogs = {data.articles}></BlogList>

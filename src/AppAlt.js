@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import Main from './components/Portfolio/Main'
 import NavBar from './components/Portfolio/NavBar'
 import Resume from './components/Portfolio/Resume'
+import SocialList from './components/Portfolio/SocialList'
 
 import data from './db.json'
 import Landing from './components/Portfolio/Landing'
@@ -28,11 +29,14 @@ function AppAlt(){
   return (
     <div className="app">
       <NavBar handleAnchorClick={handleAnchorClick}></NavBar>
+      <div className="social-list">
+       <SocialList></SocialList>
+      </div>
       <Switch>
         {/* <Route exact path ="/">
           <Landing></Landing>
         </Route> */}
-        <Route path = "/">
+        <Route exact path = "/">
           <Main data={data} anchorEl={anchorEl} handleAnchorClose={handleAnchorClose} open={open} id={id}></Main>
         </Route>
         <Route path = "/resume">

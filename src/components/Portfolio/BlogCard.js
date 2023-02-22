@@ -15,28 +15,29 @@ function BlogCard({blog}) {
     if(blog.content){
         content = blog.content
     }
+    console.log(blog)
 
   return (
     <Link href = {link} underline = "none">
-    <Card sx = {{maxWidth: 345, height: 369, marginLeft:1, marginRight:1}}>
-        <CardMedia
-        sx={{height: 175}}
-        image = {thumbnail}>
-        </CardMedia>
-        <CardContent sx ={{justifyContent: "center"}}>
-            <Typography variant="h5">
-                {title}
-            </Typography>
-            {content ?
-            <Typography>
-                {content.split(" ").slice(0, 20).join(" ") + "..."}
-            </Typography>
-            :
-            null
-            }
-        
-        </CardContent>
-    </Card>
+        <Card sx = {{maxWidth: 345, height: 369, marginLeft:1, marginRight:1, backgroundColor:"#8892b0"}}>
+            <CardMedia
+            sx={{height: 175}}
+            image = {thumbnail}>
+            </CardMedia>
+            <CardContent sx ={{justifyContent: "center"}}>
+                <Typography variant="h5">
+                    {title}
+                </Typography>
+                {content ?
+                <Typography>
+                    {content.split(" ").slice(0, 20).join(" ") + "..."}
+                </Typography>
+                :
+                null
+                }
+            
+            </CardContent>
+        </Card>
     </Link>
   )
 }

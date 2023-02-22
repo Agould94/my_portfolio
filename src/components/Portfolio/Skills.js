@@ -35,11 +35,11 @@ function Skills({skills, technologies}) {
     setTech(e.target.alt)
   }
   function handleMouseLeave(){
-    setTech(null)
+   //setTech(null)
   }
 
   return (
-    <Box sx = {{display:"flex", paddingBottom:5, justifyContent:"center"}}>
+    <Box sx = {{display:"flex", paddingBottom:5, justifyContent:"flex-end", paddingRight:"15vw"}}>
       <div className = "circle" >
           <div className = "innerCircle">
             {tech ?
@@ -50,40 +50,40 @@ function Skills({skills, technologies}) {
           </div>
         <ul className='menu'>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {javaIcon} style ={{height:35, width:35}} alt = 'Java'></img>
+            <img src = {javaIcon} style ={{height:17.5, width:17.5}} alt = 'Java'></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {canvaIcon} style ={{height:35, width:35}} alt = "Canva"></img>
+            <img src = {canvaIcon} style ={{height:17.5, width:17.5}} alt = "Canva"></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {figmaIcon} style ={{height:35, width:35}} alt = "Figma"></img>
+            <img src = {figmaIcon} style ={{height:17.5, width:17.5}} alt = "Figma"></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {notionIcon} style ={{height:35, width:35}} alt = "Notion"></img>
+            <img src = {notionIcon} style ={{height:17.5, width:17.5}} alt = "Notion"></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {photoshopIcon} style ={{height:35, width:35}} alt = "Photoshop"></img>
+            <img src = {photoshopIcon} style ={{height:17.5, width:17.5}} alt = "Photoshop"></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {miroIcon} style={{heigh:35, width:35}} alt="Miro"></img>
+            <img src = {miroIcon} style={{heigh:17.5, width:17.5}} alt="Miro"></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {postgresqlIcon} style ={{height:35, width:35}} alt = "PostgreSQL"></img>
+            <img src = {postgresqlIcon} style ={{height:17.5, width:17.5}} alt = "PostgreSQL"></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {pythonIcon} style ={{height:35, width:35}} alt = "Python"></img>
+            <img src = {pythonIcon} style ={{height:17.5, width:17.5}} alt = "Python"></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {javascriptIcon} style ={{height:35, width:35}} alt = "JavaScript"></img>
+            <img src = {javascriptIcon} style ={{height:17.5, width:17.5}} alt = "JavaScript"></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {reactIcon} style ={{height:35, width:35}} alt = "React"></img>
+            <img src = {reactIcon} style ={{height:17.5, width:17.5}} alt = "React"></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {railsIcon} style ={{height:35, width:35}} alt = "Rails"></img>
+            <img src = {railsIcon} style ={{height:17.5, width:17.5}} alt = "Rails"></img>
           </li>
           <li onMouseEnter = {handleMouseEnter} onMouseLeave = {handleMouseLeave}>
-            <img src = {rubyIcon} style ={{height:35, width:35}} alt = "Ruby"></img>
+            <img src = {rubyIcon} style ={{height:17.5, width:17.5}} alt = "Ruby"></img>
           </li>
         </ul>
        

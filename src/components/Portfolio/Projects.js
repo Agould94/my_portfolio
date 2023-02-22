@@ -19,38 +19,40 @@ function Projects({projects}) {
   return (
     <div>
         <Box sx = {{backgroundColor:"#112240", paddingBottom:5}}>
-            <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: 8, height: 350, alignItems:"center"}}>
+            <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: "12.5%", alignItems:"center", height: "75vh", width:"100vw"}}>
                 <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:4}}>
-                    <iframe width="400" height="250" 
+                    <iframe width="425" height="300" 
                     src={projects[0].embedurl} 
                     title="YouTube video player" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
                     </iframe>
-                    <Typography variant="h5" sx={{display:"flex", justifyContent:"center"}}>{projects[0].name}</Typography>
-                    <Box>
-                        <Link href = {projects[0].github}>
-                            <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
-                                <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
-                                    <GitHub/>
-                                </Avatar>
-                                Github
-                            </Button>
-                        </Link>
-                        <Link href = {projects[0].demo}>
-                            <Button variant ="outlined" sx = {{color:"#64ffda",borderColor:"#64ffda"}}>
-                                Live Demo
-                            </Button>
-                        </Link>
-                    </Box>
+                    <Typography variant="h5" sx={{display:"flex", justifyContent:"center", color:"#e6f1ff"}}>{projects[0].name}</Typography>
                 </Box>
-                <Box sx ={{display:"flex", width: "32%", marginLeft: 2}}>
-                    <Typography variant = "p" >{projects[0].description}</Typography>
+                <Box sx ={{display:"flex", width: "50%", flexDirection:"column", height:"290px", backgroundColor:"#0a192f"}}>
+                    <Box sx={{display:"flex", padding:3}}>
+                        <Typography variant = "p" sx={{color:"#e6f1ff"}} >{projects[0].description}</Typography>
+                    </Box>
+                        <Box sx={{display:"flex", justifyContent:"flex-end", paddingRight:3, paddingBottom:3}}>
+                            <Link href = {projects[0].github}>
+                                <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
+                                    <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
+                                        <GitHub/>
+                                    </Avatar>
+                                    Github
+                                </Button>
+                            </Link>
+                            <Link href = {projects[0].demo}>
+                                <Button variant ="outlined" sx = {{color:"#64ffda",borderColor:"#64ffda"}}>
+                                    Live Demo
+                                </Button>
+                            </Link>
+                        </Box>
                 </Box>
             </Box>
-            <Box className = "RightJustifiedBox" sx = {{display: "flex", flexDirection: 'row-reverse', marginRight: 8, alignItems: "center", height:300}}>
-                <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center"}}>
+            <Box className = "RightJustifiedBox" sx = {{display: "flex", flexDirection: 'row-reverse', paddingRight:"12.5%", alignItems: "center", height:"75vh", width:"100vw"}}>
+                <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:4}}>
                 <iframe width="400" height="250" 
                 src={projects[1].embedurl} 
                 title="YouTube video player" 
@@ -59,7 +61,12 @@ function Projects({projects}) {
                 allowfullscreen>
                 </iframe>
                 <Typography variant="h5" sx={{display:"flex", justifyContent:"center", color:"#e6f1ff"}}>{projects[1].name}</Typography>
-                <Box>
+                </Box>
+                <Box className = "textBox" sx ={{display:"flex", width: "50%", height:"250", marginLeft: 2, paddingLeft:2, justifyContent:"center", flexDirection:"column", backgroundColor:"#0a192f", padding:3}}>
+                    <Box sx={{display:"flex", padding:3}}>
+                        <Typography variant = "p" color={"#e6f1ff"}>{projects[1].description}</Typography>
+                    </Box>
+                    <Box sx={{display:"flex", justifyContent:"flex-start", paddingLeft:3}}>
                         <Link href = {projects[1].github}>
                             <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
                                 <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
@@ -75,11 +82,8 @@ function Projects({projects}) {
                         </Link>
                     </Box>
                 </Box>
-                <Box className = "textBox" sx ={{display:"flex", width: "32%", marginLeft: 2, alignItems:"center"}}>
-                    <Typography variant = "p" >{projects[1].description}</Typography>
-                </Box>
             </Box>
-            <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: 8, height: 300, alignItems:"center"}}>
+            <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: "12.5%", height: "75vh", width:"100vw", alignItems:"center" }}>
                 <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center"}}>
                     <iframe width="400" height="250" 
                     src={projects[2].embedurl} 
@@ -88,8 +92,14 @@ function Projects({projects}) {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
                     </iframe>
-                    <Typography variant="h5" sx={{display:"flex", justifyContent:"center"}}>{projects[2].name}</Typography>
-                    <Box>
+                    <Typography variant="h5" sx={{display:"flex", justifyContent:"center", color:"#e6f1ff"}}>{projects[2].name}</Typography>
+                   
+                </Box>
+                <Box sx ={{display:"flex", width: "32%", backgroundColor:"#0a192f", height:"228.5px", boxShadow:5, marginBottom:"30px", flexDirection:"column", justifyContent:"space-between"}}>
+                    <Box sx={{display:"flex", padding:3, paddingTop:"14%"}}>
+                        <Typography variant = "p" color={"#e6f1ff"}>{projects[2].description}</Typography>
+                    </Box>
+                    <Box sx={{display:"flex", justifyContent:"flex-end", alignItems:"end", paddingRight:3, paddingBottom:3}}>
                         <Link href = {projects[2].github}>
                             <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
                                 <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
@@ -100,12 +110,9 @@ function Projects({projects}) {
                         </Link>
                     </Box>
                 </Box>
-                <Box sx ={{display:"flex", width: "32%", marginLeft: 2}}>
-                    <Typography variant = "p" >{projects[2].description}</Typography>
-                </Box>
             </Box>
-            <Box className = "RightJustifiedBox" sx = {{display: "flex", flexDirection: 'row-reverse', marginRight: 8, alignItems: "center", height:300}}>
-                <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center"}}>
+            <Box className = "RightJustifiedBox" sx = {{display: "flex", flexDirection: 'row-reverse', paddingRight: "12.5%", alignItems: "center", height:"75vh", width:"100vw"}}>
+                <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:4}}>
                 <iframe width="400" height="250" 
                 src={projects[3].embedurl} 
                 title="YouTube video player" 
@@ -113,8 +120,13 @@ function Projects({projects}) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
                 </iframe>
-                <Typography variant="h5" sx={{display:"flex", justifyContent:"center"}}>{projects[3].name}</Typography>
-                <Box>
+                <Typography variant="h5" sx={{display:"flex", justifyContent:"center", color:"#e6f1ff"}}>{projects[3].name}</Typography>
+                </Box>
+                <Box className = "textBox" sx ={{height:"250", display:"flex", width: "32%", marginLeft: 2, justifyContent:"center", backgroundColor:"#0a192f", padding:3, flexDirection:"column"}}>
+                    <Box sx={{display:"flex", padding:3}}>
+                        <Typography variant = "p" color={"#e6f1ff"}>{projects[3].description}</Typography>
+                    </Box>
+                    <Box sx={{display:"flex", paddingLeft:3}}>
                         <Link href = {projects[3].github}>
                             <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
                                 <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
@@ -125,12 +137,9 @@ function Projects({projects}) {
                         </Link>
                     </Box>
                 </Box>
-                <Box className = "textBox" sx ={{display:"flex", width: "32%", marginLeft: 2, alignItems:"center"}}>
-                    <Typography variant = "p" >{projects[3].description}</Typography>
-                </Box>
             </Box>
-            <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: 8, height: 300, alignItems:"center"}}>
-                <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center"}}>
+            <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: "12.5%", height: "75vh", width:"100vw", alignItems:"center"}}>
+                <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:4}}>
                     <iframe width="400" height="250" 
                     src={projects[4].embedurl} 
                     title="YouTube video player" 
@@ -138,8 +147,13 @@ function Projects({projects}) {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
                     </iframe>
-                    <Typography variant="h5" sx={{display:"flex", justifyContent:"center"}}>{projects[4].name}</Typography>
-                                        <Box>
+                    <Typography variant="h5" sx={{display:"flex", justifyContent:"center", color:"#e6f1ff"}}>{projects[4].name}</Typography>
+                </Box>
+                <Box sx ={{display:"flex", width: "32%", flexDirection:"column", backgroundColor:"#0a192f"}}>
+                    <Box sx = {{display:"flex", padding:3}}>
+                        <Typography variant = "p" color={"#e6f1ff"}>{projects[4].description}</Typography>
+                    </Box>
+                    <Box sx={{display:"flex", justifyContent:"flex-end", paddingRight:3, paddingBottom:3}}>
                         <Link href = {projects[4].github}>
                             <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
                                 <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
@@ -149,9 +163,6 @@ function Projects({projects}) {
                             </Button>
                         </Link>
                     </Box>
-                </Box>
-                <Box sx ={{display:"flex", width: "32%", marginLeft: 2}}>
-                    <Typography variant = "p" >{projects[4].description}</Typography>
                 </Box>
             </Box>
         </Box>
