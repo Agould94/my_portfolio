@@ -8,6 +8,7 @@ import Skills from './Skills'
 import { Popover, Divider } from '@mui/material'
 import Contact from './Contact'
 import Tag from './Tag'
+import Landing from './Landing'
 
 
 
@@ -44,6 +45,7 @@ function Main({id, anchorEl, handleAnchorClose, open, data}) {
       }}>
         <Contact email = {info.email} phone = {info.phone} linkedin = {info.linkedin}></Contact>
       </Popover>
+      <Landing></Landing>
       <Info info = {info}></Info>
       <Skills skills = {info.skills} technologies={info.technologies}></Skills>
       <Projects projects = {data.projects}></Projects>

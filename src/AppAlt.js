@@ -7,6 +7,7 @@ import NavBar from './components/Portfolio/NavBar'
 import Resume from './components/Portfolio/Resume'
 
 import data from './db.json'
+import Landing from './components/Portfolio/Landing'
 
 function AppAlt(){
   useEffect(()=>{console.log("hi")})
@@ -28,7 +29,10 @@ function AppAlt(){
     <div className="app">
       <NavBar handleAnchorClick={handleAnchorClick}></NavBar>
       <Switch>
-        <Route exact path ="/">
+        {/* <Route exact path ="/">
+          <Landing></Landing>
+        </Route> */}
+        <Route path = "/">
           <Main data={data} anchorEl={anchorEl} handleAnchorClose={handleAnchorClose} open={open} id={id}></Main>
         </Route>
         <Route path = "/resume">

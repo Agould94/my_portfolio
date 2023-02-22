@@ -12,8 +12,8 @@ function Info({info}){
         </Box>
         <Divider orientation="vertical" variant="middle" flexItem></Divider>
         <Box sx={{display:"flex", alignItems:"flex-start", flexDirection:"column", justifyContent:"flex-start", marginLeft:5, width:"50%"}}>
-          <Typography variant="h2">{firstName} {lastName}</Typography>
-          <Typography variant="p" sx = {{width:"75%", paddingRight:4}}>{bio}</Typography>
+          <Typography variant="h2" className = "header-text">About Me</Typography>
+          <Typography variant="p" className = "body-text" sx = {{width:"75%", paddingRight:4}}>{bio}</Typography>
         </Box>
       </Box>
       <p></p>

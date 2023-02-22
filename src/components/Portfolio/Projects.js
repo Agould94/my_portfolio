@@ -18,7 +18,7 @@ function Projects({projects}) {
 
   return (
     <div>
-        <Box sx = {{backgroundColor:"#888888", paddingBottom:5}}>
+        <Box sx = {{backgroundColor:"#112240", paddingBottom:5}}>
             <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: 8, height: 350, alignItems:"center"}}>
                 <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:4}}>
                     <iframe width="400" height="250" 
@@ -31,7 +31,7 @@ function Projects({projects}) {
                     <Typography variant="h5" sx={{display:"flex", justifyContent:"center"}}>{projects[0].name}</Typography>
                     <Box>
                         <Link href = {projects[0].github}>
-                            <Button variant="contained" sx={{backgroundColor:"#363636", marginRight:1}}>
+                            <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
                                 <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
                                     <GitHub/>
                                 </Avatar>
@@ -39,7 +39,7 @@ function Projects({projects}) {
                             </Button>
                         </Link>
                         <Link href = {projects[0].demo}>
-                            <Button variant ="contained" sx = {{backgroundColor:"#363636"}}>
+                            <Button variant ="outlined" sx = {{color:"#64ffda",borderColor:"#64ffda"}}>
                                 Live Demo
                             </Button>
                         </Link>
@@ -58,10 +58,10 @@ function Projects({projects}) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
                 </iframe>
-                <Typography variant="h5" sx={{display:"flex", justifyContent:"center"}}>{projects[1].name}</Typography>
+                <Typography variant="h5" sx={{display:"flex", justifyContent:"center", color:"#e6f1ff"}}>{projects[1].name}</Typography>
                 <Box>
                         <Link href = {projects[1].github}>
-                            <Button variant="contained" sx={{backgroundColor:"#363636", marginRight:1}}>
+                            <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
                                 <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
                                     <GitHub/>
                                 </Avatar>
@@ -69,7 +69,7 @@ function Projects({projects}) {
                             </Button>
                         </Link>
                         <Link href = {projects[1].demo}>
-                            <Button variant ="contained" sx = {{backgroundColor:"#363636"}}>
+                            <Button variant ="outlined" sx = {{color:"#64ffda",borderColor:"#64ffda"}}>
                                 Live Demo
                             </Button>
                         </Link>
@@ -91,7 +91,7 @@ function Projects({projects}) {
                     <Typography variant="h5" sx={{display:"flex", justifyContent:"center"}}>{projects[2].name}</Typography>
                     <Box>
                         <Link href = {projects[2].github}>
-                            <Button variant="contained" sx={{backgroundColor:"#363636", marginRight:1}}>
+                            <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
                                 <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
                                     <GitHub/>
                                 </Avatar>
@@ -116,7 +116,7 @@ function Projects({projects}) {
                 <Typography variant="h5" sx={{display:"flex", justifyContent:"center"}}>{projects[3].name}</Typography>
                 <Box>
                         <Link href = {projects[3].github}>
-                            <Button variant="contained" sx={{backgroundColor:"#363636", marginRight:1}}>
+                            <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
                                 <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
                                     <GitHub/>
                                 </Avatar>
@@ -141,7 +141,7 @@ function Projects({projects}) {
                     <Typography variant="h5" sx={{display:"flex", justifyContent:"center"}}>{projects[4].name}</Typography>
                                         <Box>
                         <Link href = {projects[4].github}>
-                            <Button variant="contained" sx={{backgroundColor:"#363636", marginRight:1}}>
+                            <Button variant="outlined" sx={{color:"#64ffda",borderColor:"#64ffda", marginRight:1}}>
                                 <Avatar className = "avtr" sx={{marginRight:1, height:"100%", width:"25%"}}>
                                     <GitHub/>
                                 </Avatar>
