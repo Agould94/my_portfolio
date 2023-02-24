@@ -28,7 +28,7 @@ function Main({id, anchorEl, handleAnchorClose, open, data}) {
   // },[])
 
   return (
-    <div>
+    <div className="max-width">
       <div>
       <Popover 
       id={id}
@@ -47,8 +47,8 @@ function Main({id, anchorEl, handleAnchorClose, open, data}) {
       </Popover>
       <Landing></Landing>
       <Info info = {info}></Info>
-      
-      <Skills skills = {info.skills} technologies={info.technologies}></Skills>
+      {/* <Divider variant="middle" sx={{backgroundColor:"#a8b2d1"}}></Divider> */}
+      <Skills skills={info.skills} technologies={info.technologies}></Skills>
       <Projects projects = {data.projects}></Projects>
       <BlogList blogs = {data.articles}></BlogList>
       <Divider/>

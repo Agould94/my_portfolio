@@ -14,6 +14,8 @@ code {
 
 html, body{
   height: 100%;
+  width:100vw;
+  overscroll-behavior: none;
 }
 
 canvas{
@@ -28,12 +30,12 @@ canvas{
 
 .app{
   background-color: #0a192f;
- 
+  max-width: 100vw;
 }
 
 .circle{
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   /* background: rgba(0, 0, 0, 0.2); */
   display: inline-flex;
   border-radius: 50%;
@@ -41,18 +43,19 @@ canvas{
 }
 
 .innerCircle{
-  width: 100px;
-  height: 100px;
-  background:#8892b0;
+  width: 200px;
+  height: 200px;
+  /* background:#ffffff00; */
+  border: 2px solid #64ffda;
   border-radius: 50%;
   position: absolute;
   top:50%;
   left:50%;
-  margin: -50px 0px 0px -50px;
+  margin: -100px 0px 0px -100px;
 }
 
 .innerCircleText{
-  color:#0a192f;
+  color:#64ffda;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +65,7 @@ canvas{
 }
 
 .menu{
-  --d:75px;
+  --d:150px;
   --i:30deg;
   list-style-type: none;
   padding: 0;
@@ -134,10 +137,10 @@ canvas{
 }
 
 .contact{
-  background-color: rgb(107, 107, 107);
+  background-color: #233554;
   height:80vh;
   width:800px;
-  border: 9px rgb(63, 63, 63);
+  border: 9px #64ffda;
 
 }
 
@@ -248,8 +251,34 @@ canvas{
   list-style-type: none;
 }
 
+.skill-list{
+  column-count:2;
+  column-gap: 100px;
+}
 
+.skill-li{
+  color:#a8b2d1;
+}
 
+li span{
+  position:relative;
+  left:5px;
+}
+
+.skill-li::marker{
+  content:'▹';
+  color:#64ffda;
+}
+
+.greenText{
+  color:#64ffda;
+  display:inline;
+  font-weight: bold;
+}
+
+.max-width{
+  max-width: 100vw;
+}
 
 /* 
 Navy	#0a192f

@@ -13,7 +13,7 @@ import Landing from './components/Portfolio/Landing'
 function AppAlt(){
   useEffect(()=>{console.log("hi")})
   const [anchorEl, setAnchorEl]=useState(null)
-  console.log(data)
+  console.log(data.info)
   
  function handleAnchorClick(e){
     setAnchorEl(e.currentTarget)
@@ -30,7 +30,7 @@ function AppAlt(){
     <div className="app">
       <NavBar handleAnchorClick={handleAnchorClick}></NavBar>
       <div className="social-list">
-       <SocialList></SocialList>
+       <SocialList info = {data.info}></SocialList>
       </div>
       <Switch>
         {/* <Route exact path ="/">

@@ -19,9 +19,10 @@ function Projects({projects}) {
   return (
     <div>
         <Box sx = {{backgroundColor:"#112240", paddingBottom:5}}>
-            <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: "12.5%", alignItems:"center", height: "75vh", width:"100vw"}}>
+            <Typography variant="h3" className= "header-text" sx={{display:"flex", justifyContent:"center", paddingTop:5}}>Things I've Built</Typography>
+            <Box className = "leftJustifiedBox" sx = {{display: "flex", paddingLeft: "12.5%", alignItems:"center", height: "75vh", width:"100vw"}}>
                 <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:4}}>
-                    <iframe width="425" height="300" 
+                    <iframe width="500" height="350" 
                     src={projects[0].embedurl} 
                     title="YouTube video player" 
                     frameborder="0" 
@@ -30,8 +31,8 @@ function Projects({projects}) {
                     </iframe>
                     <Typography variant="h5" sx={{display:"flex", justifyContent:"center", color:"#e6f1ff"}}>{projects[0].name}</Typography>
                 </Box>
-                <Box sx ={{display:"flex", width: "50%", flexDirection:"column", height:"290px", backgroundColor:"#0a192f"}}>
-                    <Box sx={{display:"flex", padding:3}}>
+                <Box sx ={{display:"flex", width: "50%", flexDirection:"column", height:"325px", backgroundColor:"#0a192f"}}>
+                    <Box sx={{display:"flex", padding:3, paddingBottom:0}}>
                         <Typography variant = "p" sx={{color:"#e6f1ff"}} >{projects[0].description}</Typography>
                     </Box>
                         <Box sx={{display:"flex", justifyContent:"flex-end", paddingRight:3, paddingBottom:3}}>
@@ -83,7 +84,7 @@ function Projects({projects}) {
                     </Box>
                 </Box>
             </Box>
-            <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: "12.5%", height: "75vh", width:"100vw", alignItems:"center" }}>
+            <Box className = "leftJustifiedBox" sx = {{display: "flex", paddingLeft: "12.5%", height: "75vh", width:"100vw", alignItems:"center" }}>
                 <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center"}}>
                     <iframe width="400" height="250" 
                     src={projects[2].embedurl} 
@@ -138,7 +139,7 @@ function Projects({projects}) {
                     </Box>
                 </Box>
             </Box>
-            <Box className = "leftJustifiedBox" sx = {{display: "flex", marginLeft: "12.5%", height: "75vh", width:"100vw", alignItems:"center"}}>
+            <Box className = "leftJustifiedBox" sx = {{display: "flex", paddingLeft: "12.5%", height: "75vh", width:"100vw", alignItems:"center"}}>
                 <Box sx = {{display:"flex", flexDirection:"column", justifyContent:"center", paddingTop:4}}>
                     <iframe width="400" height="250" 
                     src={projects[4].embedurl} 
