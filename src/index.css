@@ -254,8 +254,10 @@ canvas{
 .skill-list{
   column-count:2;
   column-gap: 100px;
-  display:flex;
+  display:flexbox;
+  padding-left:200px;
   width:inherit;
+  height:inherit;
 }
 
 .skill-li{

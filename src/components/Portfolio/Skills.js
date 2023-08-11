@@ -22,7 +22,7 @@ function Skills({skills, technologies}) {
   const skillText2="I am expierienced at programming in:"
   
 
-  const skillsToDisplay = ["Ruby", "Rails", "Python","JavaScript", "React", "PostgreSQL", "Java"].map((skill)=>{
+  const skillsToDisplay = ["Ruby", "Rails", "Python","JavaScript", "React", "PostgreSQL", "Java", "C#"].map((skill)=>{
     return(
         <li className="skill-li"><span>{skill}</span></li>
     )
