@@ -29,15 +29,15 @@ function NavBar({handleAnchorClick}) {
             </Box>
             <Box sx={{display:"flex"}}>
                 <Typography variant="p" sx = {{color:"#64ffda", display:"flex", alignItems:"center", paddingTop:"5px"}}>01.</Typography>
-                <Button sx = {{color: '#ccd6f6', marginTop: '5px', paddingLeft:"0px"}} variant = "text" component= {Link} to = "/about" >
+                <Button sx = {{color: '#ccd6f6', marginTop: '5px', paddingLeft:"0px"}} variant = "text" component= {Link} to = "/main/about" >
                     About
                 </Button>
                 <Typography variant="p" sx = {{color:"#64ffda", display:"flex", alignItems:"center", paddingTop:"5px"}}>02.</Typography>
-                <Button sx = {{color: '#ccd6f6', marginTop: '5px', paddingLeft:"0px"}} variant = "text" component= {Link} to = "/resume" >
+                <Button sx = {{color: '#ccd6f6', marginTop: '5px', paddingLeft:"0px"}} variant = "text" component= {Link} to = "/main/resume" >
                     Resume
                 </Button>
                 <Typography variant="p" sx = {{color:"#64ffda", display:"flex", alignItems:"center", paddingTop:"5px"}}>03.</Typography>
-                <Button sx = {{color: '#ccd6f6', marginTop: '5px', paddingLeft:"0px"}} variant = "text" component= {Link} to = "/projects" >
+                <Button sx = {{color: '#ccd6f6', marginTop: '5px', paddingLeft:"0px"}} variant = "text" component= {Link} to = "/main/projects" >
                     Projects
                 </Button>
                  <Button sx = {{color: '#64ffda', marginTop: '5px', borderColor: "#64ffda"}} variant="outlined" onClick = {handleAnchorClick} >

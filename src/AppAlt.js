@@ -7,6 +7,7 @@ import NavBar from './components/Portfolio/NavBar'
 import Resume from './components/Portfolio/Resume'
 import SocialList from './components/Portfolio/SocialList'
 
+
 import data from './db.json'
 import Landing from './components/Portfolio/Landing'
 
@@ -36,15 +37,16 @@ function AppAlt(){
         {/* <Route exact path ="/">
           <Landing></Landing>
         </Route> */}
-        <Route exact path = "/">
+        <Route exact path = "/main">
           <Main data={data} anchorEl={anchorEl} handleAnchorClose={handleAnchorClose} open={open} id={id}></Main>
         </Route>
-        <Route path = "/resume">
+        <Route path = "/main/resume">
           <Resume></Resume>
         </Route>
-        <Route path = "/projects">
-          
+        <Route path = "/main/projects">
+          <h1>hi</h1>
         </Route>
+      
       </Switch>
     </div>
   )

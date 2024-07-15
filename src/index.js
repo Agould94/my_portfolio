@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom'
 
 import AppAlt from './AppAlt';
 
@@ -11,7 +12,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AppAlt />
+    <Route path = '/main' component = {AppAlt}>
+    </Route>
+      
+     <Route path = "/alt" component = {App}>
+      </Route>
     </BrowserRouter>
   </React.StrictMode>
 );
