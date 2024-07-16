@@ -1,11 +1,14 @@
 import React from "react";
-import MainPage from "./components/newApp/MainPage"
+import './new.css';
+import MainPage from "./components/newApp/MainPage";
 
 function App() {
  
   return (
-    <div class = "background-div">
-      <MainPage></MainPage>
+    <div className ="outer-background">
+      <div className = "background-div">
+        <MainPage></MainPage>
+      </div>
     </div>
   );
 }
