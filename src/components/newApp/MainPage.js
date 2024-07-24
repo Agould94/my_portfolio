@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import VideoModal from './VideoModal'
 import GitHubButton from './GitHubButton';
+import {LinkedIn, GitHub, X} from '@mui/icons-material';
 
 
 function MainPage({data}){
@@ -52,7 +53,7 @@ function MainPage({data}){
                     </div>
                 </div>
             </div>
-            <div>
+            <div className = "current-work">
                 <p>My current work involves full stack deveopment in .NET and technical team management to solve complex problems related to the movement of data in real-time security operations.</p>
                 <p>Including:</p>
                 <ul>
@@ -62,6 +63,14 @@ function MainPage({data}){
                     <li>Integrations with Mobile teams.</li>
                     <li>IT and server management.</li>
                 </ul>
+            </div>
+            <div className = "footer">
+                    <div className = "right-div"><small>Alexander Gould</small><small>alexander.gould94@gmail.com</small></div>
+                    <div className = "left-div">
+                        <a href = "https://github.com/Agould94"><GitHub></GitHub></a>
+                        <a href = "https://www.linkedin.com/in/alexander-gould1/"><LinkedIn/></a>
+                        <a href = "https://x.com/Alex_Gould94"><X/></a>
+                    </div>
             </div>
         </div>
         
