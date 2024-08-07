@@ -6,30 +6,30 @@ import * as THREE from 'three'
 import data from'./db.json'
 
 function App() {
- const [vantaEffect, setVantaEffect] = useState(null)
- const vantaRef = useRef(null)
- useEffect(() => {
-  if (!vantaEffect) {
-    setVantaEffect(
-      CLOUDS({
-        el: vantaRef.current,
-        THREE: THREE,
-      })
-    );
-  }
+//  const [vantaEffect, setVantaEffect] = useState(null)
+//  const vantaRef = useRef(null)
+//  useEffect(() => {
+//   if (!vantaEffect) {
+//     setVantaEffect(
+//       CLOUDS({
+//         el: vantaRef.current,
+//         THREE: THREE,
+//       })
+//     );
+//   }
 
-  function handleResize(){
-    vantaEffect.resize();
-  }
+//   function handleResize(){
+//     vantaEffect.resize();
+//   }
 
-  window.addEventListener('resize', handleResize);
-  return () => {
-    if (vantaEffect) vantaEffect.destroy();
-  };
-}, [vantaEffect]);
+//   window.addEventListener('resize', handleResize);
+//   return () => {
+//     if (vantaEffect) vantaEffect.destroy();
+//   };
+// }, [vantaEffect]);
   return (
     <div>
-        <div ref = {vantaRef} className = 'outer-background'>
+        <div className = 'outer-background'>
           <div className = "background-div">
             <div className="scroll-parent">
               <MainPage data = {data}></MainPage>

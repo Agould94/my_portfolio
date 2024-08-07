@@ -295,10 +295,10 @@
     {
       "name":"Statistical Dashboard",
       "description":"Built in C#, .NET MVC, and JavaScript. Employs complex functions to display statistical data about various activities of security personnel.",
-      "video":"https://youtu.be/AVIeXdjibpA",
+      "video":"https://youtu.be/430c07a9ekg",
       "github":"https://github.com/Agould94/Dialogium",
       "demo":"https://dialogium.onrender.com",
-      "embedurl":"https://www.youtube.com/embed/AVIeXdjibpA"
+      "embedurl":"https://www.youtube.com/embed/430c07a9ekg"
     },
     {
       "name":"Dialogium",
