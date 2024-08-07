@@ -19,8 +19,8 @@ export default [
     react,
   },
   rules: {
-    'no-unused-vars':'off',
-    'no-restricted-globals': ['error', 'isFinite', 'isNaN']
+    "no-unused-vars":"off",
+    "no-restricted-globals": ['error', 'isFinite', 'isNaN']
   },
   settings: {
     react: {
