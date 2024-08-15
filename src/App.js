@@ -4,6 +4,7 @@ import MainPage from "./components/newApp/MainPage";
 import CLOUDS from 'vanta/dist/vanta.clouds.min'
 import * as THREE from 'three'
 import data from'./db.json'
+import yinyang from './assets/Yin_yang.png' 
 
 function App() {
 //  const [vantaEffect, setVantaEffect] = useState(null)
@@ -32,7 +33,7 @@ function App() {
         <div className = 'outer-background'>
           <div className = "background-div">
             <div className="scroll-parent">
-              <MainPage data = {data}></MainPage>
+              <MainPage data = {data} yinyang = {yinyang}></MainPage>
             </div>
           </div>
         </div>

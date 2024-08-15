@@ -17,6 +17,23 @@ html, body{
     height:100%;
 }
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 1s ease;
+}
+
+.canvas{
+    border: 10px solid transparent;
+    border-image: url('./assets/Mahogany.jpg') 30 round;
+}
 
 .background-div{
     background-color:bisque;

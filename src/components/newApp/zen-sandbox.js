@@ -1,11 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react';
 import ParticleWorker from '../../workers/particleWorker.worker.js';
 
-function DrawingCanvas() {
+
+function DrawingCanvas({yinyang}) {
     const canvasRef = useRef(null);
     const requestRef = useRef()
     const particlesRef = useRef([]);
     const [initialized, setInitialized] = useState(false);
+    const workerRef = useRef(null);
+    const [animationClass, setAnimationClass] = useState('');
     //const [particles, setParticles] = useState([]);
 
     useEffect(() => {
@@ -13,21 +16,22 @@ function DrawingCanvas() {
         const context = canvas.getContext('2d');
         const width = canvas.width;
         const height = canvas.height;
-        const worker = new ParticleWorker();
+        workerRef.current = new ParticleWorker();
+
 
         if (!initialized) {
             const initialParticles = initializeParticles(width, height);
             console.log(initialParticles)
             //setParticles(initialParticles);
             particlesRef.current = initialParticles;
-            worker.postMessage({
+            workerRef.current.postMessage({
                 type: 'init',
                 particles: initialParticles
             });
             setInitialized(true);
         }
 
-        worker.onmessage = (event) => {
+        workerRef.current.onmessage = (event) => {
             if (event.data.status) {
                 console.log(event.data.status); // Log initialization status
             } else {
@@ -69,7 +73,7 @@ function DrawingCanvas() {
             for (let i = 0; i <= steps; i++) {
                 const x = x1 + (dx * i / steps);
                 const y = y1 + (dy * i / steps);
-                worker.postMessage({ type: 'updateParticles', particles: particlesRef.current, x, y, radius: 10, strength: 2.3 });
+                workerRef.current.postMessage({ type: 'updateParticles', particles: particlesRef.current, x, y, radius: 10, strength: 2.3 });
             }
         };
         
@@ -85,7 +89,7 @@ function DrawingCanvas() {
 
         return () => {
             cancelAnimationFrame(requestRef.current)
-            worker.terminate();
+            workerRef.current.terminate();
             canvas.removeEventListener('mousedown', () => isMouseDown = true);
             canvas.removeEventListener('mouseup', () => {
                 isMouseDown = false;
@@ -95,17 +99,40 @@ function DrawingCanvas() {
         };
     }, []);
 
-    return <canvas ref={canvasRef} width={300} height={180} style={{ border: '1px solid black' }} />;
+    function resetParticles() {
+        const canvas = canvasRef.current;
+        const worker = new ParticleWorker()
+        if(workerRef.current){
+            workerRef.current.postMessage({
+                type: 'reset',
+                width: canvas.width,
+                height: canvas.height
+            });
+        }
+        setAnimationClass('spin');  // Apply the spinning animation
+
+        setTimeout(() => {
+            setAnimationClass('');  // Reset animation class after 1 second
+        }, 1000);
+    }
+    return (
+        <div>
+            <canvas ref={canvasRef} width={300} height={180} className="canvas"></canvas>
+            <button onClick={resetParticles} className="reset-button" style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+                <img src={yinyang} alt="Reset" className={animationClass} style={{ width: '40px', height: '40px' }} />
+            </button>
+        </div>
+    );
 }
 
 function initializeParticles(width, height) {
-    const particleCount = 8000;
+    const particleCount = 4000;
     return Array.from({ length: particleCount }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
         vx: 0,
         vy: 0,
-        size: 0.5,
+        size: 1,
         alpha: 0.6
     }));
 }
@@ -123,10 +150,10 @@ function throttle(callback, delay) {
 
 function drawParticles(context, particles) {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-    context.fillStyle = '#F4E8C1';
+    context.fillStyle = '#fcf8e8';
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     particles.forEach(particle => {
-        context.fillStyle = 'black';
+        context.fillStyle = '#a88a13';
         context.globalAlpha = particle.alpha;
         const halfSize = particle.size / 2;
         context.fillRect(particle.x - halfSize, particle.y - halfSize, particle.size, particle.size);

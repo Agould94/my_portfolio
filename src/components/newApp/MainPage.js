@@ -5,7 +5,7 @@ import {LinkedIn, GitHub, X} from '@mui/icons-material';
 import DrawingCanvas from './zen-sandbox';
 
 
-function MainPage({data}){
+function MainPage({data, yinyang}){
     console.log(data)
     const[isModalOpen, setModalOpen] = useState(false);
     const [currentVideoId, setCurrentVideoId] = useState('')
@@ -58,7 +58,7 @@ function MainPage({data}){
                 <VideoModal isOpen={isModalOpen} closeModal={closeModal} videoId={currentVideoId} />
                         </div>
                         <div className = "zen">
-                            <DrawingCanvas></DrawingCanvas>
+                            <DrawingCanvas yinyang = {yinyang}></DrawingCanvas>
                         </div>
                     </div>
                     <h4 className = "text">Projects under development:</h4>

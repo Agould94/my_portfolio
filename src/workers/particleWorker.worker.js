@@ -1,7 +1,8 @@
 /* eslint no-restricted-globals: ['error', 'self'] */
 // eslint-disable-next-line no-restricted-globals
 self.onmessage = function(e) {
-    const { type, particles, x, y, radius, strength } = e.data;
+    //console.log("worker recieved messge:", e.data)
+    const { type, particles, x, y, radius, strength, width, height } = e.data;
     switch (type) {
         case 'init':{
             // eslint-disable-next-line no-restricted-globals
@@ -16,7 +17,14 @@ self.onmessage = function(e) {
             self.postMessage(self.particles);  // Send back the initialized particles for drawing
             break;
         }
+        case 'reset':
+             // eslint-disable-next-line no-restricted-globals
+            self.particles = initializeParticles(width, height);
+             // eslint-disable-next-line no-restricted-globals
+            self.postMessage(self.particles);
+            break;   
         case 'updateParticles':{
+            //console.log('worker rec')
             // eslint-disable-next-line no-restricted-globals
             if (!self.particles) {
                 console.error('Particles data is not initialized.');
@@ -48,3 +56,18 @@ self.onmessage = function(e) {
         }
     }
 };
+function initializeParticles(width, height) {
+    const particleCount = 4000;  // Adjust count as needed
+    let particles = [];
+    for (let i = 0; i < particleCount; i++) {
+        particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: 0,
+            vy: 0,
+            size: 1,
+            alpha: 0.6
+        });
+    }
+    return particles;
+}
