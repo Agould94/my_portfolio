@@ -43,7 +43,7 @@ function MainPage({data, yinyang}){
                 <h3>Here are some projects I have built:</h3>
                 <div className = "projects-container">
                     <div className = "projects-and-zen">
-                        <div>
+                        <div className = 'projects'>
                         {videos.map((video) => (
                             <div className = "project-div">
                                 <button key={video.id} onClick={() => openModal(video.id)}>

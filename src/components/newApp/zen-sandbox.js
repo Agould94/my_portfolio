@@ -116,8 +116,8 @@ function DrawingCanvas({yinyang}) {
         }, 1000);
     }
     return (
-        <div>
-            <canvas ref={canvasRef} width={300} height={180} className="canvas"></canvas>
+        <div className = "canvasdiv">
+            <canvas ref={canvasRef} width={180} height={300} className="canvas"></canvas>
             <button onClick={resetParticles} className="reset-button" style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
                 <img src={yinyang} alt="Reset" className={animationClass} style={{ width: '40px', height: '40px' }} />
             </button>
