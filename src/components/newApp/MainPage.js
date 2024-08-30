@@ -34,7 +34,7 @@ function MainPage({data, yinyang}){
         <div class = 'mainPage' id = 'mainPage'>
             <div className = "intro">
             <h1>Welcome to my Website</h1>
-            <p className = "text" >I am passionate about building web   applications and writing great code</p>
+            <p className = "text" >I am passionate about building web applications and writing great code.</p>
             <p className = "text">I work with teams and alone to deliver the best possible products.</p>
             <p className = "text">I continue to hone my skills by building projects and learning as much as I can. </p>
             <p className='text'>Follow me here to keep up to date on my work.</p>
@@ -71,15 +71,20 @@ function MainPage({data, yinyang}){
                 </div>
             </div>
             <div className = "current-work">
-                <p>My current work involves rebuilding a legacy .NET application in a modern MVC framework, and technical team management to solve complex problems related to the movement of data in real-time security operations.</p>
-                <p>Including:</p>
-                <ul>
-                    <li>Statistical representation of real-time security tour data.</li>
-                    <li>Live location tracking and mapping.</li>
-                    <li>ORM development to maximize efficacy and clarity of data.</li>
-                    <li>Integrations with Mobile teams.</li>
-                    <li>IT and server management.</li>
-                </ul>
+                <h3>I Currently Work at GuardTrax</h3>
+                <p>A Web and Mobile application for field management of private security teams.</p>
+                <p id="includes">It includes</p>
+                
+                <ul className ='current-work-ul'>
+                    <li>Site Mapping <br/>&<br/> Geofencing</li>
+                    <li>Live Security Guard Tracking</li>
+                    <li>Remote Field Team Management</li>
+                    <li>Statistical Reporting<br/>&<br/>Analytics</li>
+                </ul>  
+                <p id="bm">Built In</p>
+                <p id="includes">MSSQL, C#, .NET MVC, & Javascript/React.</p>
+                
+                
             </div>
             <div className = "footer">
                     <div className = "right-div"><small>Alexander Gould</small><small>alexander.gould94@gmail.com</small></div>
