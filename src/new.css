@@ -35,9 +35,10 @@ html, body{
 }
 
 .zen{
-    width: 50%;
     display: flex;
+    justify-content: center;
     align-items: center;
+    width: 100%; 
 }
 
 .projects-and-zen{
@@ -50,14 +51,56 @@ html, body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 auto; /* Center the div horizontally */
 
 }
 
-.canvas{
-    border: 10px solid transparent;
-    border-image: url('./assets/Mahogany.jpg') 30 round;
+.outer-frame {
+    position: relative;
+    width: 320px; /* Size to include the canvas and border */
+    height: 320px; /* Size to include the canvas and border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Make the frame circular */
+    background-image: url('./assets/Mahogany.jpg'); /* Apply mahogany texture */
+    background-size: cover; /* Ensure the image covers the entire border */
+    padding: 5px; /* Padding to create space for the "border" effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
+.canvas-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;  /* Adjust to match inner circle size */
+    height: 300px; /* Adjust to match inner circle size */
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fcf8e8; /*/* Circular border image */
+}
+
+.canvas {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.reset-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: none;  /* Remove default button borders */
+    background: none;  /* Remove default button background */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .background-div{
     background-color:bisque;
@@ -69,6 +112,13 @@ html, body{
    
   
 }
+.reset-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* Ensure the image scales properly */
+    transition: transform 1s ease; /* Ensure the image scales correctly */
+}
+
 
 .background-div {
     background-image: url('./assets/wooden-plank-texture (1).jpg');

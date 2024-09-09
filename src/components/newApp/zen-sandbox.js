@@ -9,20 +9,18 @@ function DrawingCanvas({yinyang}) {
     const [initialized, setInitialized] = useState(false);
     const workerRef = useRef(null);
     const [animationClass, setAnimationClass] = useState('');
-    //const [particles, setParticles] = useState([]);
 
     useEffect(() => {
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
         const width = canvas.width;
         const height = canvas.height;
+        const radius = width / 2;
         workerRef.current = new ParticleWorker();
 
 
         if (!initialized) {
             const initialParticles = initializeParticles(width, height);
-            console.log(initialParticles)
-            //setParticles(initialParticles);
             particlesRef.current = initialParticles;
             workerRef.current.postMessage({
                 type: 'init',
@@ -36,14 +34,14 @@ function DrawingCanvas({yinyang}) {
                 console.log(event.data.status); // Log initialization status
             } else {
                 particlesRef.current = event.data;
-                requestAnimationFrame(() => drawParticles(context, particlesRef.current));
+                requestAnimationFrame(() => drawParticles(context, particlesRef.current, radius));
             }
         };
 
         const draw = ()=>{
             //requestAnimationFrame(draw)
             context.clearRect(0, 0, canvas.width, canvas.height)
-            drawParticles(context, particlesRef.current)
+            drawParticles(context, particlesRef.current, radius)
             requestRef.current = requestAnimationFrame(draw);
         }
 
@@ -116,12 +114,14 @@ function DrawingCanvas({yinyang}) {
         }, 1000);
     }
     return (
-        <div className = "canvasdiv">
-            <canvas ref={canvasRef} width={180} height={300} className="canvas"></canvas>
-            <button onClick={resetParticles} className="reset-button" style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-                <img src={yinyang} alt="Reset" className={animationClass} style={{ width: '40px', height: '40px' }} />
+        <div className="outer-frame">
+        <div className="canvas-wrapper">
+            <canvas ref={canvasRef} width={300} height={300} className="canvas"></canvas>
+            <button onClick={resetParticles} className="reset-button">
+                <img src={yinyang} alt="Reset" className = {animationClass}/>
             </button>
         </div>
+    </div>
     );
 }
 
@@ -148,17 +148,26 @@ function throttle(callback, delay) {
     };
 }
 
-function drawParticles(context, particles) {
+function drawParticles(context, particles, radius) {
+    // Clear the canvas
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-    context.fillStyle = '#fcf8e8';
-    context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+
+    // Draw a circular mask
+    context.save();
+    context.beginPath();
+    context.arc(context.canvas.width / 2, context.canvas.height / 2, radius, 0, Math.PI * 2);
+    context.clip();
+
+    // Draw particles within the circular area
     particles.forEach(particle => {
         context.fillStyle = '#a88a13';
         context.globalAlpha = particle.alpha;
         const halfSize = particle.size / 2;
         context.fillRect(particle.x - halfSize, particle.y - halfSize, particle.size, particle.size);
     });
+    
     context.globalAlpha = 1;
+    context.restore();
 }
 
 export default DrawingCanvas;
