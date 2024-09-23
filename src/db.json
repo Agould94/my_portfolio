@@ -317,18 +317,18 @@
       "embedurl":"https://www.youtube.com/embed/un1dK-FDgU4"
     },
     {
-      "name":"Tarot Reader",
-      "description":"Read your fortune now.",
-      "video":"https://youtu.be/YBITZttzbcA",
-      "github":"https://github.com/Agould94/Tarot-reading-and-journal",
-      "embedurl":"https://www.youtube.com/embed/YBITZttzbcA"
-    },
-    {
       "name":"Crypto CLI Wallet",
       "description":"A CLI based crypto market query tool. Employs mathematical functions to handle financial formulas on a stored cryptocurrency portfolio.",
       "video":"https://youtu.be/9Y0auLenBsQ",
       "github":"https://github.com/Agould94/Crypto_prices_app",
       "embedurl":"https://www.youtube.com/embed/9Y0auLenBsQ"
+    },
+    {
+      "name":"Tarot Reader",
+      "description":"Read your fortune now.",
+      "video":"https://youtu.be/YBITZttzbcA",
+      "github":"https://github.com/Agould94/Tarot-reading-and-journal",
+      "embedurl":"https://www.youtube.com/embed/YBITZttzbcA"
     }
   ]
 }

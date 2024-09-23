@@ -11,11 +11,20 @@
     font-style: normal;
 }
 
+@font-face{
+    font-family: Goldstone;
+    src: url('./assets/fonts/Goldstone-8O8BJ.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body{
     font-family: 'Hero-Regular', Arial, Helvetica, sans-serif;
     margin:0;
     height:100%;
 }
+
+
 
 @keyframes spin {
     from {
@@ -24,25 +33,27 @@ html, body{
     to {
         transform: rotate(360deg);
     }
-}
+}  
 
 .spin {
     animation: spin 1s ease;
 }
 
 .projects{
-    width: 50%;
+    text-align: left; /* Ensure the text stays left-aligned */
 }
 
 .zen{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%; 
+    align-items: center; /* Space between the text and the canvas */
 }
 
 .projects-and-zen{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto; /* Projects take up remaining space, sandbox auto-sized */
+    /* Space between the project text and the canvas */
+    align-items: start; /* Align content to the top */
    
 }
 
@@ -57,8 +68,8 @@ html, body{
 
 .outer-frame {
     position: relative;
-    width: 320px; /* Size to include the canvas and border */
-    height: 320px; /* Size to include the canvas and border */
+    width: 300px; /* Size to include the canvas and border */
+    height: 300px; /* Size to include the canvas and border */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,6 +78,12 @@ html, body{
     background-size: cover; /* Ensure the image covers the entire border */
     padding: 5px; /* Padding to create space for the "border" effect */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    padding: 10px;
+    float: right; /* Make the sandbox float to the right */
+    shape-outside: circle(50%); /* Ensures text wraps around the circular shape */
+    shape-margin: 20px; /* Adds some margin around the shape for better readability */
+    margin-right: 100px;
+    margin-top: 50px;
 }
 
 .canvas-wrapper {
@@ -231,15 +248,28 @@ html, body{
 }
 .mainPage{
     display: flex;
-    height:100%;
+    height: 100%;
     align-items: center;
     flex-direction: column;
-    
-    overflow-y:auto;
-    padding:10px;
+    overflow-y: auto;
+    padding: 10px;
     padding-bottom: 20px;
+    position: relative;
 }
 
+.contactButton {
+    position: sticky;
+    top: 20px;
+    right: 0;
+    padding: 10px 20px;
+    background-color: #c7ebcc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    margin-left: auto;
+}
 .intro{
     width: 90%;
 }
@@ -319,5 +349,303 @@ html, body{
 }
 
 html{
-    background-color:rgb(214, 214, 214)
+    
+
+    background-color: #e0f7e0; /* Base color, like a soft green or sky */
+    
+    background-image: 
+        url('assets/bg-1.png'),    /* Background layer 1: Farther away bamboo */
+        url('assets/bg-2.png'),  /* Background layer 2: Mid-ground bamboo */
+        url('assets/bg-3.png');   /* Background layer 3: Closest bamboo */
+    
+    background-position: 
+        center top,     /* Position layer 1 */
+        center 50px,    /* Offset layer 2 slightly */
+        center 100px;   /* Offset layer 3 more to give depth */
+    
+    background-size: 
+        auto 100%,      /* Keep natural width, stretch height */
+        auto 90%,       /* Slightly smaller for depth effect */
+        auto 80%;       /* Even smaller for the front layer */
+
+    background-repeat: 
+        repeat-x,       /* Repeat horizontally for a forest-like effect */
+        repeat-x,
+        repeat-x;
+
+    background-attachment: 
+        fixed,          /* Fix layer 1 to the background */
+        fixed,          /* Fix layer 2 to the background */
+        fixed;          /* Fix layer 3 to the background */
+    
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 0;
 }
+
+/* General form styling */
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form fields */
+    max-width: 500px; /* Restrict the width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    background-color: #94afa2; /* Light background for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better readability */
+}
+
+/* Individual form fields */
+.form-group {
+    width: 100%; /* Full width inside the form */
+    margin-bottom: 15px; /* Spacing between fields */
+    display: flex;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%; /* Make input fields full width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color:#d9e5de;
+}
+
+/* Textarea for messages */
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    height: 100px; /* Default height for textarea */
+    
+}
+
+/* Checkbox groups */
+.form-checkbox {
+    display: flex;
+    align-items: center; /* Align checkbox and label */
+    justify-content: center; /* Align checkboxes and labels to the left */
+    width: 100%; /* Make the checkbox group take full width */
+}
+
+/* Ensure the checkbox is aligned correctly */
+.form-checkbox input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and label */
+    /* Optional: Increase the size of the checkbox for better accessibility */
+    background-color: #d9e5de;
+}
+
+/* Label styles for checkboxes */
+.form-checkbox label {
+    font-size: 16px; /* Standard font size for labels */
+    display: inline-block; /* Make the label inline to avoid awkward wrapping */
+    margin: 0; /* Ensure no additional margins are applied */
+    white-space: nowrap; /* Prevent label text from wrapping */
+}
+
+/* Submit button */
+.form-group button {
+    width: 100%; /* Full width button */
+    padding: 12px;
+    background-color: #55675c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #e3d5af; /* Darker blue on hover */
+}
+
+
+
+input[type="checkbox"] {
+    width: 16px; /* Default checkbox size */
+    height: 16px;
+    accent-color: #d9e5de; /* Change the color of the checkbox */
+    cursor: pointer;
+    margin-right: 3px; /* Add space between checkbox and label */
+  }
+  input[type="checkbox"]:checked {
+    accent-color: #479165; /* Checked color */
+  }
+
+  /* Ensure label and checkbox are aligned */
+  label {
+    display: inline-flex;
+    align-items: center; /* Vertically align the checkbox and label text */
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  /* General modal styling for all modals */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);  /* Dimmed background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgb(239 245 240 / 63%);  /* Same background color as the contact form */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.modal-video {
+    width: 100%;
+    height: 360px;
+}
+
+.intro-text{
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -90%);
+    font-family: 'Goldstone', Arial, Helvetica, sans-serif;
+    font-size: 5rem; /* Increase the size of the text */
+    color: #000; /* Black text color */
+    display: flex; /* Display flex to arrange spans in a row */
+}
+
+.letter {
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 1s forwards; /* Animate opacity */
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Start with invisible */
+    }
+    to {
+      opacity: 1; /* Fade in to visible */
+    }
+  }
+  
+/* Intro screen background */
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: #f3e0c9; /* Tan background color */
+    background-image: url('./assets/wooden-plank-texture\ \(1\).jpg'); /* Optional background image */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Make sure it stays on top */
+  }
+
+
+  .intro-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(250, 250, 250, 0.781);
+  }
+  
+  /* Leaf image animation */
+  .leaf {
+    position: absolute;
+    top: 50%; /* Start near the center */
+    left: 50%; /* Start near the center */
+    transform: translate(-50%, -90%) rotate(-45deg);
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    filter: grayscale(100%) brightness(0); /* Make it a silhouette */
+    transform: rotate(-45deg); /* Start rotated nearly horizontal */
+    transform-origin: center;
+    animation: floatLeaf 10s linear forwards;  /* Custom easing for fluid motion */
+    opacity: 1; /* Initially hide the leaf */
+    animation-delay: 0.5s; /* Wait before starting animation */
+  }
+  
+  /* Keyframes for leaf animation */
+  @keyframes floatLeaf {
+    0% {
+      transform: translate(-50px, 0px) rotate(-45deg); /* Start from the top */
+      opacity: 1; /* Fade in the leaf at start */
+ 
+    }
+    10% {
+      transform: translate(25px, 25px) rotate(-90deg);
+      
+    }
+    15%{
+        transform: translate(50px, 0px) rotate(-112.5deg);
+       
+    }
+    20% {
+      transform: translate(75px, -50px) rotate(-135deg); /* Up and right, continue rotation */
+
+    }
+    25%{
+        transform: translate(50px, -100px) rotate(-157.5deg);
+
+    }
+    30% {
+      transform: translate(25px, -150px) rotate(-180deg); /* Up and left, continue rotation */
+    }
+    35%{
+        transform: translate(-50px, -125px) rotate(-202.5deg);
+    
+    }
+    40% {
+      transform: translate(-100px, -100px) rotate(-225deg); 
+    } 
+    45%{
+        transform: translate(-125px, -50px) rotate(-247.5deg);
+     
+    }
+    50% {
+      transform: translate(-150px, 0px) rotate(-270deg);
+      
+    }
+    55%{
+        transform: translate(-125px, 100px) rotate(-292.5deg);
+    }
+   
+    70% {
+      transform: translate(-90px, 200px) rotate(-360deg); /* Down and left, stop rotation */
+    }
+    80% {
+      transform: translate(75px, 250px) rotate(-405deg); /* Down and right, stop rotation */
+    }
+    90% {
+      transform: translate(-125px, 300px) rotate(-405deg); /* Down and left, stop rotation */
+    }
+    100% {
+      transform: translate(0px, 350px) rotate(-405deg); /* Rest at the center between left and right */
+    }
+  }
